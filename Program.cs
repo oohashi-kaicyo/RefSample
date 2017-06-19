@@ -20,8 +20,8 @@ namespace RefSample
 		public static void swapAndEdit(Hoge left, Hoge right)
 		{
 			var tmp = left;
-            // 仮引数の値(格納されている値)をいじると，もともとの参照型変数が
-            // 格納も変化する
+			// 仮引数の値(格納されているアドレス)を変更しても，もともとの参照型変数が
+			// 格納しているアドレスは不変
 			left = right;
 			right = tmp;
 			tmp.A *= 100;
@@ -30,6 +30,8 @@ namespace RefSample
 			var tmp = left;
 			left = right;
 			right = tmp;
+			// 仮引数の値(格納されているアドレス)を変更すると，もともとの参照型変数が
+			// 格納しているアドレスも変化
 			tmp.A *= 100;
         }
     }
