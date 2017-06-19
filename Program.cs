@@ -24,14 +24,16 @@ namespace RefSample
 			// 格納しているアドレスは不変
 			left = right;
 			right = tmp;
+            // インスタンスに対する変更は反映される
 			tmp.A *= 100;
 		}
         public static void swapAndEdit(ref Hoge left, ref Hoge right) {
 			var tmp = left;
-			left = right;
-			right = tmp;
 			// 仮引数の値(格納されているアドレス)を変更すると，もともとの参照型変数が
 			// 格納しているアドレスも変化
+			left = right;
+			right = tmp;
+			// インスタンスに対する変更は反映される
 			tmp.A *= 100;
         }
     }
